@@ -11,6 +11,6 @@
 Добавим новый NGINX-контейнер в Deployment приложения:
 {% include snippetcut_example path=".helm/templates/deployment.yaml" syntax="yaml" examples=page.examples %}
 
-Теперь Service и Ingress должны обращаться на 80-й порт, а не 3000-й, чтобы все запросы шли через NGINX, а не напрямую на наше приложение:
+Теперь Service и Ingress должны обращаться на 80-й порт, а не 8080-й, чтобы все запросы шли через NGINX, а не напрямую на наше приложение:
 {% include snippetcut_example path=".helm/templates/service.yaml" syntax="yaml" examples=page.examples %}
 {% include snippetcut_example path=".helm/templates/ingress.yaml" syntax="yaml" examples=page.examples %}
