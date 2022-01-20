@@ -8,7 +8,7 @@ WORKDIR /src
 RUN ./mvnw clean package
 
 # [<ru>] Образ, который будет выкатываться в кластер
-FROM eclipse-temurin:11-alpine
+FROM eclipse-temurin:11-alpine as backend
 WORKDIR /app
 # [<ru>] Копируем из сборочного образа исполняемый файл проекта
 COPY --from=builder /src/target/*.jar ./app.jar
