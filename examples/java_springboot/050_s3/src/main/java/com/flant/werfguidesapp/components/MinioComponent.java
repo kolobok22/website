@@ -44,9 +44,7 @@ public class MinioComponent {
         }
     }
 
-    public String getObject(String objectName) throws IOException, InvalidKeyException,
-            InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException,
-            ServerException, InternalException, XmlParserException, ErrorResponseException {
+    public String getObject(String objectName) {
         try (InputStream stream = minioClient
                 .getObject(GetObjectArgs.builder()
                         .bucket(bucketName)
